@@ -1,5 +1,5 @@
 <?php
-function createFile($db, $poradCislo, $nazev, $spisZnak, $datumUlozeni, $skartZnak, $rokSkartace, $rada, $cislo){
+function createFile($db, $poradCislo, $spisZnak, $nazev, $datumUlozeni, $skartZnak, $rokSkartace, $rada, $cislo){
 
     $stmt = mysqli_prepare($db, "
         INSERT INTO
@@ -13,7 +13,7 @@ function createFile($db, $poradCislo, $nazev, $spisZnak, $datumUlozeni, $skartZn
         die();
     }
 
-    mysqli_stmt_bind_param($stmt, "issssssi", $poradCislo, $nazev, $spisZnak, $datumUlozeni, $skartZnak, $rokSkartace, $rada, $cislo);
+    mysqli_stmt_bind_param($stmt, "issssssi", $poradCislo, $spisZnak, $nazev, $datumUlozeni, $skartZnak, $rokSkartace, $rada, $cislo);
 
     $result = mysqli_execute($stmt);
 

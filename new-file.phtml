@@ -1,16 +1,36 @@
+<?php
+    $today = date('Y-m-d');
+?>
+
 <h2>Přidání nového záznamu</h2>
 <form method="POST">
     <div class="newFile">
-        <label for="name">Název</label>
-        <input type="text" id="name" name="name" required>
+        <label for="poradCislo">Pořadové číslo</label>
+        <input type="text" name="poradCislo" id="poradCislo">
+
         <label for="char1">Spisový znak</label>
         <input type="text" name="char1" id="char1" required>
+        
+        <label for="name">Název</label>
+        <input type="text" id="name" name="name" required>
+
         <label for="date">Datum uložení</label>
-        <input type="date" name="date" id="date" value="<?= date("j. n. Y")?>" required>
+        <input type="date" name="date" id="date" value="<?php echo $today ?>" required>
+
         <label for="char2">Skartovací znak</label>
-        <input type="text" name="char2" id="char2" required>
+        <select name="char2" id="char2">
+            <option value="0" selected disabled>--Vyberte--</option>
+            <option value="1">ZNAK1</option>
+            <option value="2">ZNAK2</option>
+            <option value="3">ZNAK3</option>
+            <option value="4">ZNAK4</option>
+            <option value="5">ZNAK5</option>
+        </select>
+        
+
         <label for="yearSkart">Rok skartace</label>
-        <input type="text" name="yearSkart" id="yearSkart" readonly>
+        <input type="text" name="yearSkart" id="yearSkart" readonly placeholder="Zadejte znak...">
+        <!-- tady ten script je z chatGPT (neumim JavaScript D: ) -->
         <script>
             document.getElementById('char2').addEventListener('input', function () {
                 const value = this.value;
@@ -26,9 +46,9 @@
             });
         </script>
 
-
         <label for="row">Řada</label>
         <input type="text" name="row" id="row" required>
+
         <label for="number">Číslo</label>
         <input type="number" name="number" id="number" required>
 

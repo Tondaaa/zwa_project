@@ -1,12 +1,15 @@
 <h2>Správa dokumentů</h2>
 
+<div class="newFile">
+    <a href="new-file.php">Přidat záznam</a>
+</div>
 
 <div class="stul">
     <table>
         <thead>
             <th>Pořadové číslo</th>
-            <th>Název</th>
             <th>Spisový znak</th>
+            <th>Název</th>
             <th>Datum uložení</th>
             <th>Skartovací znak</th>
             <th>Rok skartace</th>
@@ -22,8 +25,8 @@
             ?>
                 <tr>
                     <td><?= $file["poradCislo"] ?></td>
-                    <td><?= $file["nazev"] ?></td>
                     <td><?= $file["spisZnak"] ?></td>
+                    <td><?= $file["nazev"] ?></td>
                     <td><?= $file["datumUlozeni"] ?></td>
                     <td><?= $file["skartZnak"] ?></td>
                     <td><?= $file["rokSkartace"] ?></td>
