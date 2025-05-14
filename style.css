@@ -1,0 +1,81 @@
+.admin{
+    background-color: rgba(200, 0, 0, 0.7);
+    border: 2px solid red;
+    border-radius: 5px;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    padding: 1px;
+    margin-left: 1em;
+    transform: translate(0, -8%);
+}
+.user{
+    display: flex;
+}
+.logout{
+    display: block;
+}
+.head{
+    padding: 5px;
+}
+.garmin a:visited{
+    color: black;
+}
+.garmin a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.garmin a:hover{
+    background-color: rgb(58, 159, 253);
+    color: white;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+nav{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+}
+ul{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+nav *{
+    text-decoration: none;
+    color: black;
+    align-items: center;
+}
+nav li{
+    display: flex;
+    list-style-type: none;
+    height: 100%;
+    width: 33%;
+    margin: 0;
+    text-align: center;
+}
+.titulek img{
+    width: 2.5em;
+    display: inline-block;
+}
+.titulek h1{
+    display: inline-block;
+    transform: translate(0, -30%);
+}
+.newFile{
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    padding-left: 10px;
+}
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}

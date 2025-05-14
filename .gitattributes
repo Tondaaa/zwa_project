@@ -1,0 +1,8 @@
+* text=auto
+
+*.php     text eol=lf
+*.phtml   text eol=lf
+*.css     text eol=lf
+*.svg     text eol=lf
+
+*.png     binary

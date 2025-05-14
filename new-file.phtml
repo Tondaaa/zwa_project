@@ -1,0 +1,38 @@
+<h2>Přidání nového záznamu</h2>
+<form method="POST">
+    <div class="newFile">
+        <label for="name">Název</label>
+        <input type="text" id="name" name="name" required>
+        <label for="char1">Spisový znak</label>
+        <input type="text" name="char1" id="char1" required>
+        <label for="date">Datum uložení</label>
+        <input type="date" name="date" id="date" value="<?= date("j. n. Y")?>" required>
+        <label for="char2">Skartovací znak</label>
+        <input type="text" name="char2" id="char2" required>
+        <label for="yearSkart">Rok skartace</label>
+        <input type="text" name="yearSkart" id="yearSkart" readonly>
+        <script>
+            document.getElementById('char2').addEventListener('input', function () {
+                const value = this.value;
+                fetch('process.php', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: 'input1=' + encodeURIComponent(value)
+                })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('yearSkart').value = data;
+                });
+            });
+        </script>
+
+
+        <label for="row">Řada</label>
+        <input type="text" name="row" id="row" required>
+        <label for="number">Číslo</label>
+        <input type="number" name="number" id="number" required>
+
+
+        <button name="fileForm">Odeslat</button>
+    </div>
+</form>

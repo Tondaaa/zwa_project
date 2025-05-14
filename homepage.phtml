@@ -1,0 +1,47 @@
+<h2>Správa dokumentů</h2>
+
+
+<div class="stul">
+    <table>
+        <thead>
+            <th>Pořadové číslo</th>
+            <th>Název</th>
+            <th>Spisový znak</th>
+            <th>Datum uložení</th>
+            <th>Skartovací znak</th>
+            <th>Rok skartace</th>
+            <th>Řada</th>
+            <th>Číslo v řadě</th>
+            <?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
+            <th>Akce</th>
+            <?php } ?>
+        </thead>
+        <tbody>
+            <?php
+                foreach($files as $file){
+            ?>
+                <tr>
+                    <td><?= $file["poradCislo"] ?></td>
+                    <td><?= $file["nazev"] ?></td>
+                    <td><?= $file["spisZnak"] ?></td>
+                    <td><?= $file["datumUlozeni"] ?></td>
+                    <td><?= $file["skartZnak"] ?></td>
+                    <td><?= $file["rokSkartace"] ?></td>
+                    <td><?= $file["rada"] ?></td>
+                    <td><?= $file["cislo"] ?></td>
+                <?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
+                    <td>
+                        <form method="GET">
+                            <input type="hidden" name="id" value="<?= $file["id"] ?>">
+                            <button id="edit">Upravit</button>
+                        </form>
+                        <form method="POST">
+                            <input type="hidden" name="id" value="<?= $file["id"] ?>">
+                            <button name="deletefile">Odstranit</button>
+                        </form>
+                    </td>
+                <?php } ?>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
