@@ -1,0 +1,56 @@
+<h2>Editace souboru: <?= $file["nazev"] ?></h2>
+
+<div class="form">
+     <form method="POST">
+          <div class="newFile">
+               <label for="poradCislo">Pořadové číslo</label>
+               <input type="text" name="poradCislo" id="poradCislo" value="<?= $file["poradCislo"] ?>">
+
+               <label for="char1">Spisový znak</label>
+               <input type="text" name="char1" id="char1" value="<?= $file["spisZnak"] ?>">
+               
+               <label for="name">Název</label>
+               <input type="text" id="name" name="name" value="<?= $file["nazev"] ?>">
+
+               <label for="date">Datum uložení</label>
+               <input type="date" name="date" id="date" value="<?= $file["datumUlozeni"] ?>">
+
+               <label for="char2">Skartovací znak</label>
+               <select name="char2" id="char2">
+                    <option value="0" selected>Teď je vybrán: <?= $file["skartZnak"] ?></option>
+                    <option value="S1">ZNAK1</option>
+                    <option value="S2">ZNAK2</option>
+                    <option value="S3">ZNAK3</option>
+                    <option value="S4">ZNAK4</option>
+                    <option value="S5">ZNAK5</option>
+               </select>
+               
+
+               <label for="yearSkart">Rok skartace</label>
+               <input type="text" name="yearSkart" id="yearSkart" value="<?= $file["rokSkartace"] ?>" readonly>
+               <script>
+                    document.getElementById('char2').addEventListener('input', function () {
+                         const value = this.value;
+                         fetch('process.php', {
+                              method: 'POST',
+                              headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                              body: 'input1=' + encodeURIComponent(value)
+                         })
+                         .then(response => response.text())
+                         .then(data => {
+                              document.getElementById('yearSkart').value = data;
+                         });
+                    });
+               </script>
+
+               <label for="row">Řada</label>
+               <input type="text" name="row" id="row" value="<?= $file["rada"] ?>">
+
+               <label for="number">Číslo</label>
+               <input type="number" name="number" id="number" value="<?= $file["cislo"] ?>">
+
+
+               <button name="saveFile">Uložit</button>
+          </div>
+     </form>
+</div>

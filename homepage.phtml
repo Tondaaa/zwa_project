@@ -35,12 +35,12 @@
                 <?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
                     <td>
                         <form method="GET">
-                            <input type="hidden" name="id" value="<?= $file["id"] ?>">
+                            <input type="hidden" name="id" value="<?= $file["ID"] ?>">
                             <button id="edit">Upravit</button>
                         </form>
                         <form method="POST">
-                            <input type="hidden" name="id" value="<?= $file["id"] ?>">
-                            <button name="deletefile">Odstranit</button>
+                            <input type="hidden" name="id" value="<?= $file["ID"] ?>">
+                            <button name="deleteFile">Odstranit</button>
                         </form>
                     </td>
                 <?php } ?>

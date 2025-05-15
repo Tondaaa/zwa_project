@@ -76,6 +76,36 @@ nav li{
     max-width: 30%;
     padding-left: 10px;
 }
+table{
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+td, th{
+    padding: 0.5rem;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+table tr td:first-child, 
+table tr th:first-child {
+    border-left: 1px solid black;
+}
+table tr th {
+    border-top: 1px solid black;
+}
+table tr:first-child th:first-child {
+    border-top-left-radius: 0.5rem;
+}
+table tr:first-child th:last-child {
+    border-top-right-radius: 0.5rem;
+}
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 0.5rem;
+}
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 0.5rem;
+}
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
