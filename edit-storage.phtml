@@ -1,0 +1,11 @@
+<h2>Editace: <?= $rack["radaRacku"] . ", " . $rack["cisloRacku"] ?></h2>
+
+<form method="POST">
+     <div class="row">
+          <input type="text" name="radaRacku" id="radaRacku" value="<?= $rack["radaRacku"] ?>" required>
+     </div>
+     <div class="inRow">
+          <input type="text" name="cisloRacku" id="cisloRacku" value="<?= $rack["cisloRacku"] ?>" required>
+     </div>
+     <button name="saveStorage">Uložit</button>
+</form>
