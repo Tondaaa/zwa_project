@@ -1,6 +1,26 @@
 <?php
 require "./utils/init.php";
 require "./layout/head.phtml";
+
+    // Load rows and racks
+    $rowStmt = mysqli_prepare($db, "SELECT DISTINCT radaRacku FROM storage ORDER BY radaRacku");
+    mysqli_stmt_execute($rowStmt);
+    $rowResult = mysqli_stmt_get_result($rowStmt);
+    $rows = [];
+    while($row = mysqli_fetch_assoc($rowResult)) {
+        $rows[] = $row["radaRacku"];
+    }
+    mysqli_stmt_close($rowStmt);
+
+    $rackStmt = mysqli_prepare($db, "SELECT DISTINCT cisloRacku FROM storage ORDER BY cisloRacku");
+    mysqli_stmt_execute($rackStmt);
+    $rackResult = mysqli_stmt_get_result($rackStmt);
+    $racks = [];
+    while($rack = mysqli_fetch_assoc($rackResult)) {
+        $racks[] = $rack["cisloRacku"];
+    }
+    mysqli_stmt_close($rackStmt);
+
 require "new-file.phtml";
 require "./db/files.php";
 

@@ -19,7 +19,7 @@
 
         <label for="char2">Skartovací znak</label>
         <select name="char2" id="char2">
-            <option value="0" selected disabled>--Vyberte--</option>
+            <option value="0" selected disabled>--Vyberte znak--</option>
             <option value="S1">ZNAK1</option>
             <option value="S2">ZNAK2</option>
             <option value="S3">ZNAK3</option>
@@ -47,10 +47,20 @@
         </script>
 
         <label for="row">Řada</label>
-        <input type="text" name="row" id="row" required>
+        <select name="row" id="row" required>
+            <option value="" disabled selected>--Vyberte řadu--</option>
+            <?php foreach($rows as $rowVal){ ?>
+                <option value="<?= $rowVal ?>"><?= $rowVal ?></option>
+            <?php } ?>
+        </select>
 
         <label for="number">Číslo</label>
-        <input type="number" name="number" id="number" required>
+        <select name="number" id="number" required>
+            <option value="" disabled selected>--Vyberte číslo--</option>
+            <?php foreach($racks as $rackVal){ ?>
+                <option value="<?= $rackVal ?>"><?= $rackVal ?></option>
+            <?php } ?>
+        </select>
 
 
         <button name="fileForm">Přidat</button>

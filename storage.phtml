@@ -1,16 +1,19 @@
 <h2>Správa úložných prostor</h2>
 
-<div class="newStorage">
-     <a href="new-storage.php">Nový úložný prostor</a>
-</div>
 
-<div class="stul">
+<?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
+    <div class="newStorage">
+     <a href="new-storage.php">Nový úložný prostor</a>
+    </div>
+<?php } ?>
+
+<div class="stul2">
     <table>
         <thead>
             <th>Řada racků</th>
             <th>Číslo racku</th>
             <?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
-            <th>Akce</th>
+            <th class="actions">Akce</th>
             <?php } ?>
         </thead>
         <tbody>

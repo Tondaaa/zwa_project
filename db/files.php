@@ -5,7 +5,7 @@ function createFile($db, $poradCislo, $spisZnak, $nazev, $datumUlozeni, $skartZn
         INSERT INTO
         files(poradCislo,spisZnak,nazev,datumUlozeni,skartZnak,rokSkartace,rada,cislo)
         VALUES (?,?,?,?,?,?,?,?)
-    ", );
+    ");
     
     if($stmt === false){
         echo "Chyba při přidávání záznamu";
@@ -13,7 +13,7 @@ function createFile($db, $poradCislo, $spisZnak, $nazev, $datumUlozeni, $skartZn
         die();
     }
 
-    mysqli_stmt_bind_param($stmt, "dssssssi", $poradCislo, $spisZnak, $nazev, $datumUlozeni, $skartZnak, $rokSkartace, $rada, $cislo);
+    mysqli_stmt_bind_param($stmt, "issssssi", $poradCislo, $spisZnak, $nazev, $datumUlozeni, $skartZnak, $rokSkartace, $rada, $cislo);
 
     $result = mysqli_execute($stmt);
 
