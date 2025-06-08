@@ -1,46 +1,51 @@
-/* --- Modern, Simple, Clean Style for Archiver --- */
-
-/* Reset and base styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    background: linear-gradient(120deg, #f0f4ff 0%, #e8eafc 100%);
+    background: #f9fafb;
     min-height: 100vh;
-    color: #222;
-    line-height: 1.6;
+    color: #23272f;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    background: #2563eb;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .head {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem 2rem 0.5rem 2rem;
+    padding: 0.7rem 1.5rem;
 }
 
+.titulek {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
 .titulek img {
-    width: 2.2em;
-    vertical-align: middle;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: #2563eb;
+    padding: 4px;
 }
 .titulek h1 {
-    display: inline-block;
-    margin-left: 0.6em;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: 700;
+    color: #2563eb;
     letter-spacing: 1px;
-    vertical-align: middle;
 }
 
 .user, .admin, .userInfo, .reg, .log, .logout {
@@ -49,40 +54,39 @@ header {
 }
 
 .admin {
-    background: #912a2a;
-    border: 3px solid #c03232;
-    border-radius: 8px;
+    background: #f87171;
+    border-radius: 5px;
     color: #fff;
-    font-weight: bold;
-    padding: 0.3em 1em;
-    margin-left: 1em;
+    font-weight: 600;
+    padding: 0.2em 0.8em;
     font-size: 0.95em;
+    margin-left: 0.7em;
+    letter-spacing: 0.5px;
 }
 
 .logout button {
-    background: #fff;
-    color: #2563eb;
-    border: 1px solid #2563eb;
+    background: #2563eb;
+    color: #fff;
+    border: none;
     border-radius: 5px;
     padding: 0.4em 1.2em;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s;
 }
 .logout button:hover {
-    background: #2563eb;
-    color: #fff;
+    background: #1e40af;
 }
 
 nav {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 nav ul {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     list-style: none;
     padding: 0;
 }
@@ -90,20 +94,20 @@ nav li {
     display: flex;
 }
 nav a {
-    color: #fff;
+    color: #2563eb;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.6em 1.3em;
-    border-radius: 5px;
+    padding: 0.4em 1em;
+    border-radius: 4px;
     transition: background 0.2s, color 0.2s;
 }
 nav a:hover, nav a:focus {
-    background: #1e40af;
-    color: #fff;
+    background: #e0e7ff;
+    color: #1e40af;
 }
 
 h2 {
-    font-size: 1.7em;
+    font-size: 1.4em;
     font-weight: 700;
     margin: 2rem 0 1.5rem 0;
     color: #2563eb;
@@ -111,34 +115,35 @@ h2 {
     letter-spacing: 1px;
 }
 
-.form, .newFile {
+.form, .newFile, .newStorage {
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(37,99,235,0.07);
-    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+    max-width: 340px;
     margin: 2rem auto;
-    padding: 2rem 2rem;
+    padding: 1.2rem 1.2rem;
     display: flex;
     flex-direction: column;
     gap: 1em;
+    border: 1px solid #e5e7eb;
 }
-
 
 .form label, .newFile label, .newStorage label {
     font-weight: 600;
     margin-bottom: 0.3em;
     color: #2563eb;
+    font-size: 0.97em;
 }
 
 .form input, .form select,
 .newFile input, .newFile select,
 .newStorage input, .newStorage select {
-    padding: 0.6em 1em;
-    border: 1px solid #cbd5e1;
+    padding: 0.5em 1em;
+    border: 1px solid #d1d5db;
     border-radius: 5px;
     margin-bottom: 1em;
     font-size: 1em;
-    background: #f6f8fc;
+    background: #f3f4f6;
     transition: border 0.2s;
 }
 .form input:focus, .form select:focus,
@@ -146,6 +151,7 @@ h2 {
 .newStorage input:focus, .newStorage select:focus {
     border: 1.5px solid #2563eb;
     outline: none;
+    background: #fff;
 }
 
 button, input[type="submit"] {
@@ -153,36 +159,35 @@ button, input[type="submit"] {
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 0.7em 2em;
+    padding: 0.6em 1.5em;
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
     margin-top: 0.5em;
     transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
 }
 button:hover, input[type="submit"]:hover {
     background: #1e40af;
-    transition: 0.2s ease-in-out;
 }
 
 .newStorage {
-    margin: auto;
     max-width: 320px;
     margin-bottom: 2rem;
     margin-top: 1rem;
     padding: 1.2rem 1.5rem;
     align-items: center;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(37,99,235,0.07);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
     display: flex;
     flex-direction: column;
+    border: 1px solid #e5e7eb;
 }
 .newStorage a {
     background: #2563eb;
     color: #fff;
-    padding: 0.7em 2em;
+    padding: 0.6em 1.5em;
     border-radius: 5px;
     font-weight: 600;
     text-decoration: none;
@@ -192,42 +197,72 @@ button:hover, input[type="submit"]:hover {
     background: #1e40af;
 }
 
+.newFile {
+    max-width: 320px;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding: 1.2rem 1.5rem;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e7eb;
+}
+.newFile a {
+    background: #2563eb;
+    color: #fff;
+    padding: 0.6em 1.5em;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.newFile a:hover {
+    background: #1e40af;
+}
+
 .stul {
     width: 80%;
     margin: 2rem auto;
-    overflow-x: auto;
+    overflow-x: scroll;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+    padding: 1rem 0.5rem;
+    border: 1px solid #e5e7eb;
 }
 
 .stul2 {
-    width: 50%;
+    width: 30%;
     margin: 2rem auto;
-    overflow-x: auto;
+    overflow-x: scroll;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+    padding: 1rem 0.5rem;
+    border: 1px solid #e5e7eb;
 }
 
 table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: #fff;
-    border: 1.5px solid #2563eb;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(37,99,235,0.07);
+    border-collapse: collapse;
+    background: transparent;
     font-size: 1em;
     margin-bottom: 2rem;
 }
 
 th, td {
-    padding: 0.8em 1.1em;
+    padding: 0.7em 1em;
     border-bottom: 1px solid #e5e7eb;
-    border-right: 1px solid #e5e7eb;
     text-align: left;
 }
 
 th {
-    background: #2563eb;
-    color: #fff;
+    background: #f3f4f6;
+    color: #2563eb;
     font-weight: 700;
-    border-top: 1px solid #2563eb;
 }
 
 .actions {
@@ -235,27 +270,7 @@ th {
 }
 
 tr:nth-child(even) td {
-    background: #f6f8fc;
-}
-
-table tr td:first-child, 
-table tr th:first-child {
-    border-left: 1px solid #e5e7eb;
-}
-table tr th {
-    border-top: 1px solid #2563eb;
-}
-table tr:first-child th:first-child {
-    border-top-left-radius: 0.5rem;
-}
-table tr:first-child th:last-child {
-    border-top-right-radius: 0.5rem;
-}
-table tr:last-child td:first-child {
-    border-bottom-left-radius: 0.5rem;
-}
-table tr:last-child td:last-child {
-    border-bottom-right-radius: 0.5rem;
+    background: #f9fafb;
 }
 
 form {
@@ -268,25 +283,46 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
     width: 100%;
 }
 
+footer {
+    margin-top: auto;
+    background: #fff;
+    color: #888;
+    text-align: center;
+    padding: 1.5rem 0 0.5rem 0;
+    font-size: 1em;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7em;
+}
+
+footer .footer-logo {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.3em;
+    opacity: 0.7;
+}
+
 @media (max-width: 700px) {
     .head, .form, .newFile, .newStorage {
         padding: 1rem;
     }
-    .stul, table {
+    .stul, .stul2, table {
         font-size: 0.95em;
     }
     .titulek h1 {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 720px) {
     .head, .form, .newFile, .newStorage {
         padding: 0.5rem;
     }
-    .stul {
+    .stul, .stul2 {
         width: 100%;
-        padding: 0;
+        padding: 0.5rem 0.2rem;
     }
     table, th, td {
         font-size: 0.9em;
@@ -294,5 +330,93 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
     }
     nav ul {
         gap: 0.5rem;
+    }
+}
+
+
+.form-wide, .storage-wide {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+    width: 35%;
+    margin: 2.5rem auto;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    border: 1px solid #e5e7eb;
+}
+
+.form-wide label,
+.storage-wide label {
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 0.4em;
+    font-size: 1.07em;
+    letter-spacing: 0.2px;
+}
+
+.form-wide input,
+.form-wide select,
+.storage-wide input,
+.storage-wide select {
+    padding: 0.7em 1.1em;
+    border: 1.5px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 1.08em;
+    background: #f6f8fa;
+    margin-bottom: 1.1em;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-shadow: 0 1px 2px rgba(37,99,235,0.03);
+}
+
+.form-wide input:focus,
+.form-wide select:focus,
+.storage-wide input:focus,
+.storage-wide select:focus {
+    border: 1.5px solid #2563eb;
+    background: #fff;
+    box-shadow: 0 0 0 2px #e0e7ff;
+}
+
+.form-wide button,
+.storage-wide button {
+    background:#2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 0.8em 2.2em;
+    font-size: 1.08em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5em;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.09);
+    letter-spacing: 0.5px;
+}
+.form-wide button:hover,
+.storage-wide button:hover {
+    background:#1e40af 60%;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+
+.form-wide input[readonly] {
+    background: #f3f4f6;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.form-wide select,
+.storage-wide select {
+    appearance: none;
+    padding-right: 2.2em;
+}
+
+@media (max-width: 700px) {
+    .form-wide, .storage-wide {
+        padding: 1rem;
+        max-width: 98vw;
     }
 }

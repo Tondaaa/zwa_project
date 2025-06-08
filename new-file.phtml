@@ -4,7 +4,7 @@
 
 <h2>Přidání nového záznamu</h2>
 <form method="POST">
-    <div class="newFile">
+    <div class="form-wide">
         <label for="poradCislo">Pořadové číslo</label>
         <input type="text" name="poradCislo" id="poradCislo" required>
 
@@ -30,7 +30,6 @@
 
         <label for="yearSkart">Rok skartace</label>
         <input type="text" name="yearSkart" id="yearSkart" readonly placeholder="Zadejte znak...">
-        <!-- tady ten script je z chatGPT (neumim JavaScript D: ) -->
         <script>
             document.getElementById('char2').addEventListener('input', function () {
                 const value = this.value;
@@ -61,7 +60,6 @@
                 <option value="<?= $rackVal ?>"><?= $rackVal ?></option>
             <?php } ?>
         </select>
-
 
         <button name="fileForm">Přidat</button>
     </div>
