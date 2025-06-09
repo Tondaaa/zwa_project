@@ -4,7 +4,7 @@
 <?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
     <div class="newFile">
         <a href="new-file.php">Přidat záznam</a>
-    </div> 
+    </div>
 <?php } ?>
 
 <div class="stul">
@@ -30,7 +30,7 @@
                     <td><?= $file["poradCislo"] ?></td>
                     <td><?= $file["spisZnak"] ?></td>
                     <td><?= $file["nazev"] ?></td>
-                    <td><?= $file["datumUlozeni"] ?></td>
+                    <td><?= date("d. m. Y", strtotime($file["datumUlozeni"])) ?></td>
                     <td><?= $file["skartZnak"] ?></td>
                     <td><?= $file["rokSkartace"] ?></td>
                     <td><?= $file["rada"] ?></td>

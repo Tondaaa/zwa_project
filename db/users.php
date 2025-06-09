@@ -25,7 +25,7 @@ function registerUser($db, $username, $password, $email){
         echo "<p>" . mysqli_error($db) . "</p>";
     }
     else{
-        echo "Úspěšně jste se zaregistrovali";
+        echo "<div class='registerSuccess'><p>Úspěšně jste se zaregistrovali!<br>Nyní se můžete <a href='login.php'>přihlásit</a></p></div>";
     }
 }
 
@@ -64,4 +64,67 @@ function login($db, $username, $password){
     echo "Úspěšné přihlášení";
     $_SESSION["loggedUser"] = $user;
     header("Location: index.php");
+}
+
+function listUsers($db){
+    $result = mysqli_query($db, "SELECT ID, username, email, is_admin FROM users ORDER BY ID ASC");
+
+    if($result === false){
+        echo "<p>Chyba při výpisu uživatelů: " . mysqli_error($db);
+        return [];
+    }
+    return $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+function updateUser($db, $id, $is_admin){
+    if ($is_admin === null) {
+        $stmt = mysqli_prepare($db, "
+            UPDATE users
+            SET is_admin = NULL
+            WHERE ID = ?
+        ");
+        mysqli_stmt_bind_param($stmt, "i", $id);
+    } else {
+        $stmt = mysqli_prepare($db, "
+            UPDATE users
+            SET is_admin = 1
+            WHERE ID = ?
+        ");
+        mysqli_stmt_bind_param($stmt, "i", $id);
+    }
+
+    if($stmt === false){
+        echo "Chyba při aktualizaci uživatele";
+        echo "<p>" . mysqli_error($db) . "</p>";
+        exit();
+    }
+
+    $result = mysqli_execute($stmt);
+
+    if($result === false){
+        echo "Chyba při aktualizaci uživatele";
+        echo "<p>" . mysqli_error($db) . "</p>";
+    }
+}
+
+function deleteUser($db, $id){
+    $stmt = mysqli_prepare($db, "
+        DELETE FROM users
+        WHERE ID = ?
+    ");
+    
+    if($stmt === false){
+        echo "Chyba při mazání uživatele";
+        echo "<p>" . mysqli_error($db) . "</p>";
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $id);
+
+    $result = mysqli_execute($stmt);
+
+    if($result === false){
+        echo "Chyba při mazání uživatele";
+        echo "<p>" . mysqli_error($db) . "</p>";
+    }
 }

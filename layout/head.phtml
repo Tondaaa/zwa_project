@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archiver</title>
-    <link rel="icon" type="image/x-icon" href="/image.svg">
+    <link rel="icon" type="image/x-icon" href="./img/logo_white.svg">
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
@@ -46,9 +46,9 @@
             <ul>
                 <li><a href="index.php">Prohlížení záznamů</a></li>
                 <li><a href="storage.php">Prohlížení úložných prostor</a></li>
-                <!-- <li><a href="new-file.php">Nový záznam</a></li>
-                <li><a href="new-storage.php">Nový úložný prostor</a></li> -->
-                <li><a href="about-us.php">O nás</a></li>
+                <?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
+                <li><a href="admin-tools.php">Administrátorské nástroje</a></li>
+                <?php } ?>
             </ul>
         </nav>
         </div>

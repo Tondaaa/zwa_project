@@ -1,0 +1,37 @@
+<h2>Administrátorské nástroje</h2>
+
+<div class="stul3">
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Uživatelské jméno</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>Akce</th>
+        </thead>
+        <tbody>
+            <?php
+                foreach($users as $user){
+            ?>
+                <tr>
+                    <td><?= $user["ID"] ?></td>
+                    <td><?= $user["username"] ?></td>
+                    <td><?= $user["email"] ?></td>
+                    <td>
+                        <form method="POST">
+                            <input type="hidden" name="id" value="<?= $user["ID"] ?>">
+                            <input type="hidden" name="is_admin" value="0">
+                            <input type="checkbox" name="is_admin" value="1" <?= $user["is_admin"] ? "checked" : "" ?>>
+                    </td>
+                    <td>
+                            <button name="saveUser">Uložit</button>
+                        </form>
+                        <form method="POST">
+                            <input type="hidden" name="id" value="<?= $user["ID"] ?>">
+                            <button name="deleteUser">Odstranit</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>

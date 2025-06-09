@@ -224,9 +224,9 @@ button:hover, input[type="submit"]:hover {
 }
 
 .stul {
-    width: 80%;
+    width: 60%;
     margin: 2rem auto;
-    overflow-x: scroll;
+    overflow-x: auto;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(37,99,235,0.05);
@@ -237,12 +237,33 @@ button:hover, input[type="submit"]:hover {
 .stul2 {
     width: 30%;
     margin: 2rem auto;
-    overflow-x: scroll;
+    overflow-x: auto;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(37,99,235,0.05);
     padding: 1rem 0.5rem;
     border: 1px solid #e5e7eb;
+}
+
+.stul3 {
+    width: 40%;
+    margin: 2rem auto;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+    padding: 1rem 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.stul3 button {
+    width: 9rem;
+}
+
+.stul3 input[type="checkbox"] {
+    cursor: pointer;
+    width: 1.2em;
+    height: 1.2em;
 }
 
 table {
@@ -419,4 +440,29 @@ footer .footer-logo {
         padding: 1rem;
         max-width: 98vw;
     }
+}
+
+.registerSuccess {
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+}
+
+.registerSuccess p {
+    color: white;
+    font-weight: 400;
+    font-size: 1.1em;
+    background: #2563eb;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.registerSuccess a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 500;
 }
