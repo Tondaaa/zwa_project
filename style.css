@@ -406,12 +406,14 @@ footer .footer-logo {
 }
 
 .registerSuccess {
+    background: #fff;
     border-radius: 8px;
     padding: 1.5rem;
     max-width: 400px;
     margin: 2rem auto;
     text-align: center;
     box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+    border: 1px solid #e5e7eb;
 }
 
 .registerSuccess p {
@@ -503,5 +505,30 @@ footer .footer-logo {
 .edit-storage-form button:hover {
     background: #1e40af;
     transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+
+.header-auth {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.reg a, .log a {
+    display: inline-block;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.5em 1.4em;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 0;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+    letter-spacing: 0.5px;
+}
+
+.reg a:hover, .log a:hover {
+    background: #1e40af;
+    color: #fff;
     box-shadow: 0 4px 16px rgba(37,99,235,0.13);
 }

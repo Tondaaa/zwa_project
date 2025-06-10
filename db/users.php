@@ -1,5 +1,4 @@
 <?php
-
 function registerUser($db, $username, $password, $email){
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
@@ -61,7 +60,6 @@ function login($db, $username, $password){
         echo "Neplatné přihlašovací údaje";
         return;
     }
-    echo "Úspěšné přihlášení";
     $_SESSION["loggedUser"] = $user;
     header("Location: index.php");
 }

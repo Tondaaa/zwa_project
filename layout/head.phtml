@@ -19,11 +19,13 @@
             <h1>Archiver</h1>
         </div>
         <?php if(!isset($_SESSION["loggedUser"])){ ?>
-        <div class="reg">
-            <a href="register.php"><strong>Registrace</strong></a>
-        </div>
-        <div class="log">
-            <a href="login.php"><strong>Přihlášení</strong></a>
+        <div class="header-auth">
+            <div class="reg">
+                <a href="register.php"><strong>Registrace</strong></a>
+            </div>
+            <div class="log">
+                <a href="login.php"><strong>Přihlášení</strong></a>
+            </div>
         </div>
         <?php } else {?>
             <div class="user">
