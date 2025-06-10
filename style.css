@@ -466,3 +466,18 @@ footer .footer-logo {
     text-decoration: underline;
     font-weight: 500;
 }
+
+.red {
+    color: red;
+    font-weight: 600;
+}
+
+.orange {
+    color: orange;
+    font-weight: 600;
+}
+
+.green {
+    color: limegreen;
+    font-weight: 600;
+}

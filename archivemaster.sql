@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: localhost:3306
--- Vytvořeno: Sob 24. kvě 2025, 14:13
+-- Vytvořeno: Úte 10. čen 2025, 14:50
 -- Verze serveru: 10.4.32-MariaDB
 -- Verze PHP: 8.2.12
 
@@ -44,7 +44,30 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`ID`, `poradCislo`, `spisZnak`, `nazev`, `datumUlozeni`, `skartZnak`, `rokSkartace`, `rada`, `cislo`) VALUES
-(7, 2.1, 'SIGMA', 'Filip Turek', '2025-05-03', 'S3', '2028', 'B', 3);
+(8, 1.1, 'A1', 'Petr Pavel Petr Pavel Petr Pavel Petr Pavel Petr Pavel Petr Pavel Petr Pavel Petr Pavel Petr Pavel', '2025-06-01', 'S4', '2029', 'C', 4),
+(9, 1.3, 'SIGMA', 'AHOJ', '2025-06-29', 'S1', '2026', 'AF', 5),
+(10, 1, 'OPICE', 'Záznam práce 12. týden 2025', '2025-06-02', 'S5', '2030', 'AA', 4),
+(11, 3, 'A3', 'SIGMA', '2025-06-08', 'S1', '2025', 'AC', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `storage`
+--
+
+CREATE TABLE `storage` (
+  `ID` int(11) NOT NULL,
+  `radaRacku` varchar(2) NOT NULL,
+  `cisloRacku` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vypisuji data pro tabulku `storage`
+--
+
+INSERT INTO `storage` (`ID`, `radaRacku`, `cisloRacku`) VALUES
+(6, 'AC', 4),
+(7, 'AA', 1);
 
 -- --------------------------------------------------------
 
@@ -66,7 +89,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`ID`, `username`, `password`, `email`, `is_admin`) VALUES
 (1, 'neksiKeksik', '$2y$10$gWjq4Zlzg3kBC5Dx4B9/Aet/kaaxhbWTn5yu3Ln278FFMr5vJL54W', 'ahoj@helloskola.cz', 1),
-(2, 'ahoj', '$2y$10$YdlqqTGifqEd1bFDmsiWHeeeXogmLiy1bh5iXd45ArzDx5QEBVoGS', 'ahoj@helloskola.cz', NULL);
+(19, 'ahoj', '$2y$10$3xp0q2gS3oflQz1qNu.Ck.suu2rInKF4Pev6lBvCui5.W29856sRC', 'ahoj@helloskola.cz', NULL),
+(20, 'Adam', '$2y$10$wdPMPHbLmhckvhODHXs.l.ytNNUEbJ5idPmvEXF6uDp26vt1f/b52', 'jo@sigma.com', 1);
 
 --
 -- Indexy pro exportované tabulky
@@ -76,6 +100,12 @@ INSERT INTO `users` (`ID`, `username`, `password`, `email`, `is_admin`) VALUES
 -- Indexy pro tabulku `files`
 --
 ALTER TABLE `files`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexy pro tabulku `storage`
+--
+ALTER TABLE `storage`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -92,13 +122,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pro tabulku `files`
 --
 ALTER TABLE `files`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT pro tabulku `storage`
+--
+ALTER TABLE `storage`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pro tabulku `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

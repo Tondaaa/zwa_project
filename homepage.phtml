@@ -32,7 +32,15 @@
                     <td><?= $file["nazev"] ?></td>
                     <td><?= date("d. m. Y", strtotime($file["datumUlozeni"])) ?></td>
                     <td><?= $file["skartZnak"] ?></td>
-                    <td><?= $file["rokSkartace"] ?></td>
+                    <td>
+                        <?php if($file["rokSkartace"]==date("Y")){ ?>
+                            <span class="red"><?= $file["rokSkartace"] ?></span>
+                        <?php } else if($file["rokSkartace"]==(date("Y")+1)){ ?>
+                            <span class="orange"><?= $file["rokSkartace"] ?></span>
+                        <?php } else { ?>
+                            <span class="green"><?= $file["rokSkartace"] ?></span>
+                        <?php } ?>
+                    </td>
                     <td><?= $file["rada"] ?></td>
                     <td><?= $file["cislo"] ?></td>
                 <?php if(isset($_SESSION["loggedUser"]["is_admin"])){ ?>
