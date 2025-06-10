@@ -2,6 +2,7 @@
 require "./utils/init.php";
 require "./db/users.php";
 
+if(!isset($_SESSION["loggedUser"]["is_admin"])) header("Location: index.php");
 
 if(isset($_POST["saveUser"])){
      $is_admin = ($_POST["is_admin"] == "1") ? 1 : null;

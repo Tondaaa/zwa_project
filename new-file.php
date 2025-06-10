@@ -2,7 +2,8 @@
 require "./utils/init.php";
 require "./layout/head.phtml";
 
-    // Load rows and racks
+    if(!isset($_SESSION["loggedUser"]["is_admin"])) header("Location: index.php");
+    
     $rowStmt = mysqli_prepare($db, "SELECT DISTINCT radaRacku FROM storage ORDER BY radaRacku");
     mysqli_stmt_execute($rowStmt);
     $rowResult = mysqli_stmt_get_result($rowStmt);
