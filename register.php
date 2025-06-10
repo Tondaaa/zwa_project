@@ -9,6 +9,7 @@
             echo "<p>Hesla se neshodují</p>";
         } else {
             registerUser($db, $_POST["username"], $_POST["password"], $_POST["email"]);
+            header("Location: register.php?success=1");
         }
     }
 

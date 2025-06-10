@@ -23,9 +23,6 @@ function registerUser($db, $username, $password, $email){
         echo "Chyba při vytváření uživatele";
         echo "<p>" . mysqli_error($db) . "</p>";
     }
-    else{
-        echo "<div class='registerSuccess'><p>Úspěšně jste se zaregistrovali!<br>Nyní se můžete <a href='login.php'>přihlásit</a></p></div>";
-    }
 }
 
 function getUser($db, $username){

@@ -1,5 +1,9 @@
 <h2>Registrace</h2>
 
+<?php if(isset($_GET["success"])) { ?>
+    <div class='registerSuccess'><p>Úspěšně jste se zaregistrovali!<br>Nyní se můžete <a href='login.php'>přihlásit</a></p></div>
+<?php } ?>
+
 <div class="form">
 <form method="POST" enctype="multipart/form-data">
     <div class="uname">
